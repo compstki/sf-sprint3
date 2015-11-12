@@ -26,11 +26,18 @@ public class CLUB
 
     private void setUpMemberList() throws IOException
     {
+        // First user message
+        System.out.println("ScotFit Club: Membership BMI update");
+        System.out.println("** Preparing to read data file.");
+
         // read file, fetch data as String array containing the rows
         String[] dataRows = bmiFile.readCSVtable();
         // calculate the number of member rows, skip headings
         noOfMembers = dataRows.length - 1;
 
+        // update user with number of rows with membership details
+        System.out.println("** " + noOfMembers + " rows read.\n\n");
+        
         // prepare array for members
         memberList = new MEMBER[noOfMembers];
         // create member objects and copy data from source
@@ -42,9 +49,14 @@ public class CLUB
     }
 
     public void displayMembers() {
+        // Heading for the display
+        System.out.println("A listing of all applicants for the next year\n");
+
         for  (int i = 0; i < noOfMembers; i++) {
             memberList[i].displayDetails();
         }
+        // 2 blank line to separate this report from others.
+        System.out.print("\n\n\n");
     }
 
     public void countOKbmi() throws IOException
