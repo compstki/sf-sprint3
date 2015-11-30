@@ -24,7 +24,7 @@ public class CLUB
         countOKbmi();
     }
 
-    private void setUpMemberList() throws IOException
+     public void setUpMemberList() throws IOException
     {
         // First user message
         System.out.println("ScotFit Club: Membership BMI update");
